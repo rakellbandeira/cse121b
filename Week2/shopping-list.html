@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button onclick="buttonClick()">Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+      const ulList = document.querySelector('ul');
+      const inputBox = document.querySelector('input');
+      const buttonAdd = document.querySelector('button');  
+      
+      buttonAdd.addEventListener('click', () => {
+        const newItem = inputBox.value;
+        inputBox.value = '';
+
+        const liList = document.createElement('li');
+        const span = document.createElement('span');
+        const deleteButton = document.createElement('button');
+
+        liList.appendChild(span);
+        liList.appendChild(deleteButton);
+
+        ulList.appendChild(liList);
+
+        span.textContent = newItem;
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener('click', () => {
+          ulList.removeChild(liList);
+        });
+
+        inputBox.focus();
+      });
+
+      /*FIRST TRY:
+
+      function buttonClick() {
+        // Get the current value of the input element
+        const inputValue = inputBox.value;
+
+        // Store the value in a variable or perform any other action
+        //console.log('Input value:', inputValue);
+        
+        // Create a new list item
+        const liList = document.createElement("li");
+        /* const span = document.createElement("span"); */
+        /* const deleteButton = document.createElement("button"); */
+        /* liList.appendChild(span);
+        liList.appendChild(deleteButton); */
+
+        /* span.textContent = inputValue; */
+        /* deleteButton.textContent = "Delete"; */
+        /* deleteButton.onclick = "deleteItem()"; */
+
+        //Trying to insert a button with the onclick property
+        /*liList.innerHTML = `
+        <span>${inputValue}</span>
+        <button onclick="deleteItem(this)">Delete</button>`;
+        
+        // Add the new item to the list
+        ulList.appendChild(liList);
+
+        
+
+        //clear the input field after getting the value
+        inputBox.value = '';
+
+        //Set the focus on the text field when the button is pressed
+        document.getElementById("item").focus();
+      }
+
+      function deleteItem(button){
+        var listItem = button.parentNode;
+        listItem.parentNode.removeChild(listItem);
+        
+      }
+
+      deleteButton.addEventListener('click', deleteItem);
+      
+      buttonAdd.addEventListener('click', buttonClick);
+      */
+
+      /*ANSWER:
+
+      const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
+
+      button.addEventListener('click', () => {
+        const myItem = input.value;
+        input.value = '';
+
+        const listItem = document.createElement('li');
+        const listText = document.createElement('span');
+        const listBtn = document.createElement('button');
+
+        listItem.appendChild(listText);
+        listText.textContent = myItem;
+        listItem.appendChild(listBtn);
+        listBtn.textContent = 'Delete';
+        list.appendChild(listItem);
+
+        listBtn.addEventListener('click', () => {
+          list.removeChild(listItem);
+        });
+
+        input.focus();
+      }); */
+
+    </script>
+  </body>
+</html>

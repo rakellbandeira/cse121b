@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+  <style>
+    /* Optional: Add some basic styling for better presentation */
+    #shoppingList {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+
+    #shoppingList ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #shoppingList li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="shoppingList">
+  <label for="itemInput">Add item:</label>
+  <input type="text" id="itemInput" />
+  <button onclick="addItem()">Add to List</button>
+
+  <ul id="itemsList"></ul>
+</div>
+
+<script>
+  function addItem() {
+    // Get the input value
+    var newItem = document.getElementById('itemInput').value;
+
+    // Check if the input is not empty
+    if (newItem.trim() !== '') {
+      // Create a new list item
+      var listItem = document.createElement('li');
+
+      // Display the item and add a delete button
+      listItem.innerHTML = `
+        <span>${newItem}</span>
+        <button onclick="deleteItem(this)">Delete</button>
+      `;
+
+      // Add the new item to the list
+      document.getElementById('itemsList').appendChild(listItem);
+
+      // Clear the input field and focus on it
+      document.getElementById('itemInput').value = '';
+      document.getElementById('itemInput').focus();
+    }
+  }
+
+  function deleteItem(button) {
+    // Get the parent list item and remove it
+    var listItem = button.parentNode;
+    listItem.parentNode.removeChild(listItem);
+  }
+</script>
+
+</body>
+</html>

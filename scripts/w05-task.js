@@ -25,7 +25,8 @@ const displayTemples = (temples) => {
 
         //add the temple's imageUrl property to the src attribute 
         // and the temple's location property to the alt attribute. 
-        imgElem.src = temple.imageURL;
+        const urls = temple.imageUrl;
+        imgElem.src = urls;
         imgElem.alt = temple.location;
 
         //Append the <h3> element and the <img> element to the <article>
@@ -43,11 +44,14 @@ const displayTemples = (temples) => {
 
 /* async getTemples Function using fetch()*/
 
+const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json";
+
+
 //Create another function expression called 
 //getTemples. Make it an async anonymous, arrow function. 
 const getTemples = async () => {
 
-    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
+    let response = await fetch(url);
 
     //Convert your fetch response into a JavaScript object (.json) 
     //assign the result to the templeList global array variable
@@ -67,7 +71,7 @@ const reset = () => {
 
 /* filterTemples Function */
 
-const filterTemples = (temples) => {
+function filterTemples (temples) {
     reset();
     const filter = document.getElementById('filtered').value;
 
@@ -82,7 +86,7 @@ const filterTemples = (temples) => {
             break;
 
         case "older":
-            displayTemples(temples.filter(temple => new Date(temple.dedicatedDate) < new Date(1950, 0, 1)));
+            displayTemples(temples.filter((temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)));
             break;
 
         case 'all':

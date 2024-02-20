@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="recipe-page-styles.css">
+
+  <title>Your recipe</title>
+</head>
+<body>
+  <div class="container">
+    
+    <nav class="left-area">
+      <div class="menu">
+        <div class="menu-option" id="home-option">
+          <img src="/imgs/home-icon.png" alt="Home">
+          <span>Home</span>
+        </div>
+        
+        <div class="menu-option" id="pantry-option">
+          <img src="/imgs/fridge-icon.png" alt="My Pantry">
+          <span>My Pantry</span>
+          
+        </div>
+      </div>
+
+      
+    </nav>
+
+    
+
+    <div class="main">  
+      
+      <div class="pantry">
+        <div class="pantry-area">
+  
+          <div id="search-bar">
+            <input type="text" id="ingredient-input" placeholder="Enter ingredient">
+            <button id="search-btn">Search</button>
+          </div>
+  
+          <div class="pantry-boxcontainer">
+  
+            <div class="pantry-box" id="collapsible">
+              <div class="pantry-title" onclick="toggleCollapsible()">
+
+                <!-- <span>></span>   -->              
+                <picture>
+                  <img src="/imgs/pantry/Allcuisines.png">
+                </picture>
+                <!-- <div class="arrow"></div> -->
+
+                <div class="pantry-box-title">
+                  <h2 >Pantry Essentials</h2>
+                  <div class="pantry-box-title-info">
+                    <h4>0</h4>
+                    <h4>/40 Ingredients</h4> 
+                  </div>    
+                </div>         
+              </div>
+              <ul class="pantry-content">
+                <li class="pantry-item">butter</li>
+                <li class="pantry-item">egg</li>
+                <li class="pantry-item">garlic</li>
+                <li class="pantry-item">milk</li>
+                <li class="pantry-item">onion</li>
+                <li class="pantry-item">sugar</li>
+                <li class="pantry-item">flour</li>
+                <li class="pantry-item">olive oil</li>
+                <li class="pantry-item">rice</li>
+                <li class="pantry-item">cinnamon</li>
+                <li class="pantry-item">ketchup</li>
+                <li class="pantry-item">soy sauce</li>
+                <li class="pantry-item">mayonnaise</li>
+                <li class="pantry-item">bread</li>
+                <li class="pantry-item">baking powder</li>
+                <li class="pantry-item">brown sugar</li>
+              </ul>
+            </div>
+  
+            <div class="pantry-box">
+              <div class="pantry-title">
+                <picture>
+                  <img src="/imgs/pantry/vegetables.png">
+                </picture>
+                <div class="pantry-box-title">
+                  <h2 >Vegetables</h2>
+                  <div class="pantry-box-title-info">
+                    <h4>0</h4>
+                    <h4>/40 Ingredients</h4> 
+                  </div>    
+                </div>         
+              </div>
+              <ul class="pantry-content">
+                <li class="pantry-item">carrot</li>
+                <li class="pantry-item">tomato</li>
+                <li class="pantry-item">scallion</li>
+                <li class="pantry-item">jalapeno</li>
+                <li class="pantry-item">avocado</li>
+                <li class="pantry-item">cucumber</li>
+                <li class="pantry-item">spinach</li>
+                <li class="pantry-item">pepper</li>
+                <li class="pantry-item">sweet potato</li>
+                <li class="pantry-item">broccoli</li>
+                <li class="pantry-item">pumpkin</li>
+                <li class="pantry-item">cabbage</li>
+                <li class="pantry-item">cauliflower</li>
+                <li class="pantry-item">asparagus</li>
+                <li class="pantry-item">lettuce</li>
+                <li class="pantry-item">egg plant</li>
+              </ul>
+            </div>
+          </div>
+  
+        </div>      
+      </div>
+      <div class="right-area" class="recipe-display">
+
+        <div class="display-title">
+          <h1>Recipe Wizard</h1>
+          <h3>Your fastest recipe finder</h3>
+        </div>
+
+        <div class="display-area">
+          
+            <div class="nav-crumbs">
+                <a href="index2.html">Home</a>
+                <a>&nbsp/&nbsp</a>
+                <a href="#">Your recipe</a>
+            </div>
+
+            <div class="recipe">
+                <h2 class="recipe-title">Your Recipe Here</h2>
+                <picture>
+                    <img src="/imgs/recipes/9af7561040e090455527c197c78c24a6-t.jpg" alt="">
+
+                </picture>
+                <div class="recipe-source">
+                    <p>Source:</p>
+                    <a class="recipe-souce-url-a" href="#"><p class="recipe-souce-url">[source URL here]</p></a>
+                </div>
+                
+                <div class="recipe-ingredients">
+                    <ul>
+                        <li class=" recipe-ingredients-item">[ingredients here]</li>
+                        <li class=" recipe-ingredients-item">[ingredients here]</li>
+                    </ul>
+                </div>
+
+                <div class="recipe-directions">
+                    <p class="recipe-directions-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, possimus nemo! Temporibus itaque doloribus quod alias, molestias iste sequi illo molestiae deleniti, eveniet est nulla rem? Delectus totam obcaecati odio.</p>
+                </div>                
+                
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

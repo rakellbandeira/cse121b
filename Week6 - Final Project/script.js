@@ -24,6 +24,7 @@
           currentDiv.addEventListener('click', function () {
               // Call the markActive function when clicked
               markActive(this.id);
+              checkIngredients();
           });
       } else {
           console.error("Element with ID 'div" + i + "' not found.");
@@ -33,69 +34,72 @@
 
 // FUNCTION TO GET CONTENT FROM ACTIVE DIVS AND FILTER THROUGH THE FILES
 
-function getContent() {
-  // Get all div elements with class active
+function checkIngredients() {
+  // Get all div elements with class "active"
   var activeDivs = document.querySelectorAll('.active');
 
-  //Array to store matching data
-  var matchingData = [];
-
-  //Loop through each active div
   activeDivs.forEach( function (div) {
+      var searchText = div.textContent;
 
-    // get their text content
-    var searchText = div.textContent;
+      var matchingData = [];
 
+      var jsonFileNames = [
+          "butter-cake.json",
+          "cinnamon-almond-butter.json",
+          "cinnamon-snack-mix.json",
+          "crispy-chicken-with-soy-mayo-sauce.json",
+          "egg-pie.json",
+          "flour-tortillas-13590.json",
+          "garlic-soup.json",
+          "hamburgers-and-ketchup-gravy.json",
+          "olive-oil-dip-for-italian-bread.json",
+          "onion-bread-i.json",
+          "Pumpkin-Stuffing-Bread.json",
+          "rice-lasagna.json",
+          "spiced-mayo.json",
+          "sugar-peanuts.json"
+        ];
 
-    //List of the local JSON files
-    var jsonFileNames = [
-      "butter-cake.json",
-      "cinnamon-almond-butter.json",
-      "cinnamon-snack-mix.json",
-      "crispy-chicken-with-soy-mayo-sauce.json",
-      "egg-pie.json",
-      "flour-tortillas-13590.json",
-      "garlic-soup.json",
-      "hamburgers-and-ketchup-gravy.json",
-      "olive-oil-dip-for-italian-bread.json",
-      "onion-bread-i.json",
-      "Pumpkin-Stuffing-Bread.json",
-      "rice-lasagna.json",
-      "spiced-mayo.json",
-      "sugar-peanuts.json"
-    ];
+      jsonFileNames.forEach(function (jsonFileName) {
 
-    //Loop through the array
-    jsonFileNames.forEach( function (jsonFileName) {
-      //fetch the json file
-      fetch(jsonFileName)
-        .then(response => response.json())
-        .then(data => {
-          //Loop through each property in the json
-          for (var key in data) {
-            if (Array.isArray(data[key])) {
+          fetch(jsonFileName)
+              .then(response => response.json())
+              .then(data => {
+                  for (var key in data) {
 
-              //Check if the array contains the search text
-              if (data[key].includes(searchText)) {
+                      
+                          var recipeIngredients = data['recipe']['tags'];
+                          var isIngredientPresent = recipeIngredients.includes(searchText);
+                          matchingData.push({ file: jsonFileName, category: key, data: data[key] });
 
-                //Add matching data to the new array
-                matchingData.push({ file: jsonFileName, category: key, data: data[key]});
+                          var amountRecipes = matchingData.length;
 
-              }
-            }
-          }
+                          // Log the result
+                          if(isIngredientPresent){
+                            /* document.querySelector('.result').textContent += `Ingredient '${searchText}' is ${isIngredientPresent ? 'present' : 'not present'} in the ${jsonFileName} recipe.`; */
+                            document.querySelector('.result').textContent = `We found ${amountRecipes} recipes!` ;
 
-          //log the matching data
-/*           document.querySelector('.resultJavascript').textContent = `'Matching data for ' + ${searchText} + ' in ' + ${jsonFileName} + ':', ${matchingData}`;
- */        })
+                            matchingData.forEach( function (data) {
+                              var eachData = data[file];
+                              document.querySelector('.resultJavascript').textContent = `We found ${eachData} recipe.`;
+                            })
+                            
+                          } else {
+                            document.querySelector('.result').textContent += ``;
+                          }
+                          
+                     
+                      
+                  }
 
-        .catch(error => console.error('Error fetching JSON:', error));
-    });
-
-
-
+                  /* console.log('Matching data for ' + searchText + ' in ' + jsonFileName + ':', matchingData); */
+                  console.log(matchingData);
+              })
+              .catch(error => console.error('Error fetching JSON:', error));
+      });
   });
+
 }
 
-getContent();
-document.querySelector('.resultJavascript').textContent = `'Matching data for ' + ${searchText} + ' in ' + ${jsonFileName} + ':', ${matchingData}`;
+
+checkIngredients();

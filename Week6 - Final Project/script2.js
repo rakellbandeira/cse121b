@@ -132,7 +132,3 @@ async function processingJSONFiles()
 } 
 
 
-
-    fetchAndProcessJSON(fileName)});
-
- */

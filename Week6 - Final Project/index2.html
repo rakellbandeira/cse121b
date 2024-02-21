@@ -62,22 +62,22 @@
                 </div>         
               </div>
               <ul class="pantry-content">
-                <li class="active" id="div1" >butter</li>
-                <li class="inactive" id="div2" >egg</li>
-                <li class="inactive" id="div3" >garlic</li>
-                <li class="active" id="div4" >milk</li>
-                <li class="inactive" id="div5" >onion</li>
-                <li class="inactive" id="div6" >sugar</li>
-                <li class="active" id="div7" >flour</li>
-                <li class="inactive" id="div8" >olive oil</li>
-                <li class="inactive" id="div9" >rice</li>
-                <li class="inactive" id="div10">cinnamon</li>
-                <li class="inactive" id="div11" >ketchup</li>
-                <li class="inactive" id="div12" >soy sauce</li>
-                <li class="inactive" id="div13" >mayonnaise</li>
-                <li class="inactive" id="div14" >bread</li>
-                <li class="inactive" id="div15" >baking powder</li>
-                <li class="inactive" id="div16" >brown sugar</li>
+                <li class="inactive" id="div1" onclick="markActive('div1')">butter</li>
+                <li class="inactive" id="div2" onclick="markActive('div2')">egg</li>
+                <li class="inactive" id="div3" onclick="markActive('div3')">garlic</li>
+                <li class="inactive" id="div4" onclick="markActive('div4')">milk</li>
+                <li class="inactive" id="div5" onclick="markActive('div5')">onion</li>
+                <li class="inactive" id="div6" onclick="markActive('div6')">sugar</li>
+                <li class="inactive" id="div7" onclick="markActive('div7')">flour</li>
+                <li class="inactive" id="div8" onclick="markActive('div8')">olive oil</li>
+                <li class="inactive" id="div9" onclick="markActive('div9')">rice</li>
+                <li class="inactive" id="div10" onclick="markActive('div10')">cinnamon</li>
+                <li class="inactive" id="div11" onclick="markActive('div11')">ketchup</li>
+                <li class="inactive" id="div12" onclick="markActive('div12')">soy sauce</li>
+                <li class="inactive" id="div13" onclick="markActive('div13')">mayonnaise</li>
+                <li class="inactive" id="div14" onclick="markActive('div14')">bread</li>
+                <li class="inactive" id="div15" onclick="markActive('div15')">baking powder</li>
+                <li class="inactive" id="div16" onclick="markActive('div16')">brown sugar</li>
               </ul>
             </div>
   
@@ -95,12 +95,12 @@
                 </div>         
               </div>
               <ul class="pantry-content">
-                <li class="inactive" id="div17" >carrot</li>
-                <li class="inactive" id="div18" >tomato</li>
-                <li class="inactive" id="div19" >scallion</li>
-                <li class="inactive" id="div20" >jalapeno</li>
-                <li class="inactive" id="div21" >avocado</li>
-                <li class="inactive" id="div22" >cucumber</li>
+                <li class="inactive" id="div17" onclick="markActive('div17')">carrot</li>
+                <li class="inactive" id="div18" onclick="markActive('div18')">tomato</li>
+                <li class="inactive" id="div19" onclick="markActive('div19')">scallion</li>
+                <li class="inactive" id="div20" onclick="markActive('div20')">jalapeno</li>
+                <li class="inactive" id="div21" onclick="markActive('div21')">avocado</li>
+                <li class="inactive" id="div22" onclick="markActive('div22')">cabbage</li>
 
               </ul>
             </div>
@@ -118,7 +118,7 @@
         <div class="display-area" id="recipes">
 
           <!-- <div class="resultJavascript"></div> -->
-          
+          <!-- 
 
           <a href="/recipe-page.html">
             <div class="recipe-box">
@@ -137,129 +137,16 @@
                 </div>
               </div>
             </div>
-          </a>
+          </a> -->
 
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/899c09ec07a67a93ff38cc811e66e24b-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/9af7561040e090455527c197c78c24a6-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/9f1b7401ec93d72f39afbaa209cf44e0-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/ebf098de6f401b1f48c382c8a69564be-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/ff7536d625b3bf9411e92855eab851ed-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="/recipe-page.html">
-            <div class="recipe-box">
-              <picture>
-                <img src="/imgs/recipes/9af7561040e090455527c197c78c24a6-t.jpg" alt="">
-              </picture>
-              <div class="recipe-box-info">
-                <div class="recipe-box-info-title">
-                  <h3>How to Make Ghee from butter</h3>
-                  <h5 class="recipe-url">werecipes.com</h5>
-                </div>
-                <div class="recipe-box-info-ingredients">
-                  <h5>You have all</h5>
-                  <h5 class="amount-active-ingredients"> * </h5>
-                  <h5>ingredients</h5>
-                </div>
-              </div>
-            </div>
-          </a> 
-
+          
         </div>
 
       </div>
     </div>
   </div>
-
+  <script src="script2.js"></script>
   <script src="script.js"></script>
-  <!-- <script src="script2.js"></script> -->
+  
 </body>
 </html>

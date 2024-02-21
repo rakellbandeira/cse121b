@@ -283,12 +283,14 @@ body {
 
         .recipe-box-info{
           padding:5px;
-        }
-
-        .recipe-box-info-title h5{
           margin: 0px;
           font-weight: 100;
         }
+
+        /* .recipe-box-info-title h5{
+          margin: 0px;
+          font-weight: 100;
+        } */
 
         .recipe-box-info-ingredients{
           display: flex;
@@ -593,12 +595,13 @@ body {
 
           .recipe-box-info{
             padding:5px;
-          }
-
-          .recipe-box-info-title h5{
             margin: 0px;
             font-weight: 100;
           }
+
+          /* .recipe-box-info-title h5{
+            
+          } */
 
           .recipe-box-info-ingredients{
             display: flex;

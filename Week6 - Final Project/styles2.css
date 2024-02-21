@@ -36,6 +36,16 @@ body {
     width: 100%;
     
   }
+
+  /* .activemenu{
+    display: flex;
+    width:100%;
+    
+  }
+
+  .inactivemenu{
+    display: none;
+  } */
   
   .menu-option {
     display: flex;
@@ -55,7 +65,7 @@ body {
   .main {
     /* deactivated area */
     display: flex;
-    flex-grow: 1;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 
@@ -199,7 +209,7 @@ body {
     width: 100vw;    
 
     grid-template-columns: 1fr;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 950px auto;
 
     /* overflow-x: hidden; */
   }    
@@ -402,7 +412,15 @@ body {
       padding: 20px;
     }
 
-    
+    /* .activemenu{
+      display: flex;
+      
+      
+    }
+  
+    .inactivemenu{
+      display: flex;
+    } */
 
     .pantry{
       grid-row: 2/3;

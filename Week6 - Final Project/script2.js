@@ -18,6 +18,30 @@ const JsonFileNames = [
     'recipe13.json'
   ];
 
+// Function to switch bak to menu to my pantry
+function toggleDisplay(elementId) {
+    var targetElement = document.getElementById(elementId);
+
+    targetElement.classList.toggle('inactivemenu');
+    targetElement.classList.toggle('activemenu');
+
+    /* var menuOption = document.getElementById('pantry');
+    var pantryOption = document.getElementById('recipe-area');
+
+    if (menuOption.classList = 'activemenu') {
+
+        pantryOption.classList = 'inactivemenu';
+    } else {
+        pantryOption.classList = 'activemenu';
+    } */
+
+}
+
+
+
+
+
+
     // Function to mark an element as active or inactive
 function markActive(elementId) {
       var targetElement = document.getElementById(elementId);

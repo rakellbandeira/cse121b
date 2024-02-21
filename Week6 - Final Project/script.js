@@ -1,50 +1,4 @@
 
-
-// EFFECT MARKED IN THE INGREDIENTS
-
-    // Function to mark an element as active or inactive
-function markActive(elementId) {
-      var targetElement = document.getElementById(elementId);
-
-      // Check if the element exists
-      if (targetElement) {
-          // Toggle the class between 'active' and 'inactive'
-          targetElement.classList.toggle('active');
-          targetElement.classList.toggle('inactive');
-
-          
-      } else {
-          console.error("Element with ID '" + elementId + "' not found.");
-      }
-} 
-
-    // Add click event listeners to each div element
-for (var i = 1; i <= 22; i++) {
-
-  var currentDiv = document.getElementById('div' + i);
-
-  if (currentDiv) {
-    currentDiv.addEventListener('click', function () {
-              // Call the markActive function when clicked
-    markActive(this.id);
-
-             //for each json string in the jsonFileNames: fetchAndPro
-              /* Promise.all(jsonFileNames.map(fileName => fetchAndProcessJSON(fileName))); */
-              /* .then(() => {
-                  // Now, allIngredients contains the copied ingredients from all JSON files
-                  console.log('All ingredients:', allIngredients); */
-              
-
-               
- });
-    } else {
-          console.error("Element with ID 'div" + i + "' not found.");
-    }
-    }
-
-
-
-function processJSONFiles() {
   const jsonFileNames = [
     'recipe1.json',
     'recipe2.json',
@@ -63,6 +17,8 @@ function processJSONFiles() {
   
   // Get all active list items
   const activeListItems = document.querySelectorAll('.active');
+
+  
   
   // Function to fetch and process each JSON file
   async function fetchAndProcessJSON(fileName) {
@@ -79,6 +35,19 @@ function processJSONFiles() {
                       // Display title and directions arrays in the console
                       console.log('Title:', jsonData.recipe.title);
                       console.log('Directions:', jsonData.recipe.directions);
+                      
+                      var element = document.getElementsByClassName('recipe-box');
+                      element.innerHTML = "";
+                      element.innerHTML = `
+                      <picture>
+                        <img src="${jsonData.recipe.image}" alt="${jsonData.recipe.title}">
+                      </picture>
+                      <div class="recipe-box-info">
+                        <div class="recipe-box-info-title">
+                        <h3>${jsonData.recipe.title}</h3>
+                        <h5 class="recipe-url">${jsonData.recipe.url}</h5>
+                      </div>
+                    </div>`;
                   }
               });
           } else {
@@ -94,7 +63,9 @@ function processJSONFiles() {
       .then(() => {
           // Finished processing all JSON files
       });
-}
 
-processJSONFiles();
+
+
+
+
 

@@ -1,6 +1,6 @@
 
 var activeIDS = [];
-// EFFECT MARKED IN THE INGREDIENTS
+
 
 const JsonFileNames = [
     'recipe1.json',
@@ -25,15 +25,6 @@ function toggleDisplay(elementId) {
     targetElement.classList.toggle('inactivemenu');
     targetElement.classList.toggle('activemenu');
 
-    /* var menuOption = document.getElementById('pantry');
-    var pantryOption = document.getElementById('recipe-area');
-
-    if (menuOption.classList = 'activemenu') {
-
-        pantryOption.classList = 'inactivemenu';
-    } else {
-        pantryOption.classList = 'activemenu';
-    } */
 
 }
 
@@ -64,10 +55,7 @@ function markActive(elementId) {
 
                 processingJSONFiles();
                 
-                /* activeIDS.forEach(element => {
-                    console.log(`Marcados: ${element.textContent}`);
-                }); */
-
+                
                 
             } else {
                 // Remove the element from the array if it's inactive
@@ -116,8 +104,7 @@ async function processingJSONFiles()
                             
                         const boxes = document.createElement('div');
 
-                        boxes.innerHTML = `
-                            <a href="/recipe-page.html">
+                        boxes.innerHTML = `                            
                                 <picture>
                                     <img src="${recipeImageUrl}" alt="${recipetitle}">
                                 </picture>
@@ -126,8 +113,7 @@ async function processingJSONFiles()
                                         <h3>${recipetitle}</h3>
                                         <h5 class="recipe-url">${recipeUrl}</h5>
                                     </div>
-                                </div>
-                            </a> `;
+                                </div> `;
 
                         boxesContainer.appendChild(boxes);
                         
@@ -147,158 +133,6 @@ async function processingJSONFiles()
 
 
 
-
-
-
-/////////////////////////////////////////////////////////////////////
-
-
-/* async function processJsonFiles() {
-
-    
-    for (const jsonFileName of JsonFileNames) {
-        try {
-            const response = await fetch(jsonFileName);
-
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${jsonFileName}`);
-            }
-
-            const jsonData = await response.json();
-
-            const tagsArray = jsonData.recipe.tags; //beautiful!
-
-            console.log(`Tags in ${jsonFileName}`, tagsArray);
-        } catch (error) {
-            console.error(`Error processing ${jsonFileName}:`, error);
-        }
-    }
-}
- */
-
-/* processJsonFiles(); */
-
-
-
-
-///////////////////////////////////////////////////////////////////////
-
-
-/* function processJsonFile(jsonFileName) {
-
-    console.log("Iniciando processo de fetching");
-
-    var jsonFilePath = './'+jsonFileName; */
-
-
-
-    /* console.log(jsonFilePath); */
-
-
-
-
-    /* fetch(jsonFilePath)
-        .then(response => response.json())
-        .then(data => {
-            var tagsArray = data.recipe.tags;
-
-            tagsArray.forEach( tag => {
-                console.log(tag);
-            })
-            
-
-            var matchingTags = tagsArray.filter(tag => activeIDS.includes(tag));
-
-            if(matchingTags.length > 0) {
-                console.log('Match found in file:', jsonFileName);
-                console.log('Title:', data.recipe.title);
-                console.log('Directions:', data.recipe.directions);
-                console.log('---------------------');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching or processing JSON file:', jsonFileName, error);
-        });
-} */
-
-
-  
-
-/* JsonFileNames.forEach(jsonFileName => {
-    // Process each JSON file
-    processJsonFile(jsonFileName);
-  });
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  // Function to fetch and process each JSON file
-/* async function fetchAndProcessJSON(fileName) {
-
-    activeIDS.forEach( id => {
-        console.log('Element array:', id.textContent);
-    })
-    
-
-      try {
-          const response = await fetch(fileName);
-          const jsonData = await response.json();
-  
-          // Check if the JSON structure is as expected
-          if (jsonData.recipe && jsonData.recipe.tags && Array.isArray(jsonData.recipe.tags)) {
-              // Check if any active list item matches any tag in the JSON file
-              activeIDS.forEach(activeListItem => {
-
-                  const ingredient = activeListItem.textContent; // Convert to lowercase for case-insensitive comparison
-                  
-                  if (jsonData.recipe.tags.includes(ingredient)) {
-                      // Display title and directions arrays in the console
-                      console.log('Title:', jsonData.recipe.title);
-                      console.log('Directions:', jsonData.recipe.directions);
-
- */
-
-                      
-                      /* var element = document.getElementsByClassName('recipe-box');
-                      element.innerHTML = "";
-                      element.innerHTML = `
-                      <picture>
-                        <img src="${jsonData.recipe.image}" alt="${jsonData.recipe.title}">
-                      </picture>
-                      <div class="recipe-box-info">
-                        <div class="recipe-box-info-title">
-                        <h3>${jsonData.recipe.title}</h3>
-                        <h5 class="recipe-url">${jsonData.recipe.url}</h5>
-                      </div>
-                    </div>`; */
-/* 
-
-
-
-                   }
-              });
-          } else {
-              console.error(`Invalid JSON structure in ${fileName}`);
-          }
-      } catch (error) {
-          console.error(`Error fetching or processing ${fileName}:`, error);
-      }
-}  */
-  
-  // Use Promise.all to fetch and process all JSON files concurrently
-/* jsonFileNames.map(fileName => {
     fetchAndProcessJSON(fileName)});
 
  */

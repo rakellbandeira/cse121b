@@ -3,19 +3,19 @@ var activeIDS = [];
 
 
 const JsonFileNames = [
-    '/Week6 - Final Project/recipe1.json',
-    '/Week6 - Final Project/recipe2.json',
-    '/Week6 - Final Project/recipe3.json',
-    '/Week6 - Final Project/recipe4.json',
-    '/Week6 - Final Project/recipe5.json',
-    '/Week6 - Final Project/recipe6.json',
-    '/Week6 - Final Project/recipe7.json',
-    '/Week6 - Final Project/recipe8.json',
-    '/Week6 - Final Project/recipe9.json',
-    '/Week6 - Final Project/recipe10.json',
-    '/Week6 - Final Project/recipe11.json',
-    '/Week6 - Final Project/recipe12.json',
-    '/Week6 - Final Project/recipe13.json'
+    'Week6 - Final Project/recipe1.json',
+    'Week6 - Final Project/recipe2.json',
+    'Week6 - Final Project/recipe3.json',
+    'Week6 - Final Project/recipe4.json',
+    'Week6 - Final Project/recipe5.json',
+    'Week6 - Final Project/recipe6.json',
+    'Week6 - Final Project/recipe7.json',
+    'Week6 - Final Project/recipe8.json',
+    'Week6 - Final Project/recipe9.json',
+    'Week6 - Final Project/recipe10.json',
+    'Week6 - Final Project/recipe11.json',
+    'Week6 - Final Project/recipe12.json',
+    'Week6 - Final Project/recipe13.json'
   ];
 
 // Function to switch bak to menu to my pantry
